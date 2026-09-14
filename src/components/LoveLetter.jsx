@@ -53,10 +53,10 @@ export default function LoveLetter() {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block px-4 py-1 rounded-full bg-[#FF7AA2]/20 border border-[#FF7AA2]/50 text-[#FF7AA2] text-sm font-semibold tracking-widest uppercase mb-3">
-            Bab 03
+            BAB 03: PESAN RAHASIA
           </span>
           <h2 className="text-4xl md:text-6xl font-comic text-[#F8F8F8] text-glow-red mb-3">
-            SURAT CINTA UNTUKMU
+            SURAT BUKA-BUKAAN HATI 💌
           </h2>
           <p className="text-slate-300 text-lg md:text-xl font-light italic max-w-md mx-auto">
             "{storyData.loveLetter.header}"
@@ -161,9 +161,9 @@ export default function LoveLetter() {
 
               {/* Letter Sign-off Footer */}
               <div className="mt-8 pt-4 border-t border-slate-700/80 flex items-center justify-between text-slate-400 text-sm">
-                <span className="italic">Dengan segenap cintaku dari semesta ini,</span>
+                <span className="italic">Dari penggemar rahasiamu nomor 1,</span>
                 <span className="font-comic text-lg text-[#EF233C] flex items-center gap-1">
-                  <span>Spidermu</span>
+                  <span>Spidermu yang paling bucin</span>
                   <span>🕷️❤️</span>
                 </span>
               </div>

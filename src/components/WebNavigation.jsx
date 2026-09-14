@@ -21,10 +21,10 @@ export default function WebNavigation({ activeSection, onSelectNode }) {
           Peta Cerita Cinta
         </span>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-comic text-[#F8F8F8] text-glow-red">
-          JARING NAVIGASI CINTA
+          JARING NAVIGASI BAPER 🕸️
         </h2>
         <p className="text-slate-400 text-xs sm:text-sm md:text-base mt-1">
-          Klik titik jaring mana saja untuk langsung berseluncur ke momen manis kita
+          Klik titik jaring mana aja buat loncat langsung ke momen tergemes kita!
         </p>
       </div>
 

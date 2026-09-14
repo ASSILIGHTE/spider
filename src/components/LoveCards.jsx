@@ -19,13 +19,13 @@ export default function LoveCards() {
       <div className="text-center mb-12">
         <div>
           <span className="inline-block px-4 py-1 rounded-full bg-[#EF233C]/20 border border-[#EF233C]/50 text-[#EF233C] text-sm font-semibold tracking-widest uppercase mb-3">
-            Bab Terakhir
+            BOCORAN HATI
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-comic text-[#F8F8F8] text-glow-red mb-3">
-            HAL YANG AKU SUKAI DARI KAMU
+            ALASAN KENAPA KAMU BIKIN CANDU
           </h2>
           <p className="text-slate-300 text-sm sm:text-base md:text-xl font-light italic max-w-md mx-auto">
-            "Tekan kartu komik untuk membaca pesan rahasia di dalam hatiku..."
+            "Pilih & klik kartu komik di bawah buat ngeliat rahasia kenapa kamu gemesin banget!"
           </p>
         </div>
       </div>
