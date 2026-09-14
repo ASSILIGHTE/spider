@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #08090D;
+    --red-dark: #B91C2F;
+    --red-bright: #EF233C;
+    --soft-white: #F8F8F8;
+    --blue-accent: #2563EB;
+    --pink-accent: #FF7AA2;
+  }
+
+  body {
+    background-color: #08090D;
+    color: #F8F8F8;
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-comic {
+    font-family: 'Bangers', cursive, sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .font-handwriting {
+    font-family: 'Caveat', cursive, sans-serif;
+  }
+}
+
+/* 3D Perspective & Backface Utility Classes */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.style-preserve-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Halftone / Comic Dot Overlay */
+.comic-dots {
+  background-image: radial-gradient(rgba(239, 35, 60, 0.12) 1px, transparent 1px),
+                    radial-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+/* Comic Panel Border Styling */
+.comic-panel {
+  background: rgba(15, 17, 24, 0.85);
+  backdrop-filter: blur(12px);
+  border: 3px solid #1e2433;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8),
+              0 0 15px rgba(239, 35, 60, 0.15);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.comic-panel:hover {
+  border-color: #EF233C;
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.9),
+              0 0 25px rgba(239, 35, 60, 0.35);
+}
+
+.comic-panel-red {
+  border-color: #B91C2F;
+  box-shadow: 6px 6px 0px #08090D, 8px 8px 0px #EF233C;
+}
+
+/* Spider Web Glow Utilities */
+.web-glow-red {
+  filter: drop-shadow(0px 0px 8px rgba(239, 35, 60, 0.8));
+}
+
+.web-glow-blue {
+  filter: drop-shadow(0px 0px 8px rgba(37, 99, 235, 0.8));
+}
+
+.web-glow-pink {
+  filter: drop-shadow(0px 0px 8px rgba(255, 122, 162, 0.8));
+}
+
+.text-glow-red {
+  text-shadow: 0 0 12px rgba(239, 35, 60, 0.7), 0 0 24px rgba(185, 28, 47, 0.5);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 12px rgba(37, 99, 235, 0.7);
+}
+
+/* Custom Web Line Animation */
+@keyframes webPulse {
+  0%, 100% { opacity: 0.4; filter: drop-shadow(0 0 2px rgba(239, 35, 60, 0.3)); }
+  50% { opacity: 0.9; filter: drop-shadow(0 0 10px rgba(239, 35, 60, 0.8)); }
+}
+
+.animate-web-pulse {
+  animation: webPulse 3s infinite ease-in-out;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1.5deg); }
+}
+
+.animate-float {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #08090D;
+}
+::-webkit-scrollbar-thumb {
+  background: #B91C2F;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #EF233C;
+}
+
+/* Prevent horizontal scroll bounce */
+html, body {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
