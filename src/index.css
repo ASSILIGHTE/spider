@@ -10,11 +10,19 @@
     --pink-accent: #FF7AA2;
   }
 
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
     background-color: #08090D;
     color: #F8F8F8;
     font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
     overflow-x: hidden;
+    transform: translateZ(0);
+    will-change: auto;
   }
 
   h1, h2, h3, .font-comic {

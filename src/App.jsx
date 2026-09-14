@@ -88,7 +88,7 @@ export default function App() {
             className="px-8 py-4 bg-[#1e2433] hover:bg-[#B91C2F] text-white font-comic text-xl md:text-2xl rounded-2xl border-2 border-slate-500 hover:border-white transition-all flex items-center gap-3 mx-auto shadow-[0_0_25px_rgba(239,35,60,0.4)] hover:shadow-[0_0_40px_rgba(239,35,60,0.8)] hover:scale-105 active:scale-95 cursor-pointer"
           >
             <RotateCcw className="w-6 h-6 text-[#EF233C]" />
-            <span>PUTAR ULANG KISAH KITA</span>
+            <span>REPLAY OUR STORY</span>
           </button>
         </div>
       </main>
@@ -96,10 +96,10 @@ export default function App() {
       {/* Footer */}
       <footer className="relative z-10 border-t border-slate-800/80 py-8 px-4 text-center bg-[#06070a]/90 backdrop-blur-md">
         <p className="font-comic text-lg text-slate-300">
-          MERAJUT SEMESTA CINTA KITA 🕷️❤️
+          SPIDER WEB LOVE 🕷️❤️
         </p>
         <p className="text-xs text-slate-500 mt-1 font-light">
-          Dibuat dengan cinta untuk {storyData.couple.name2} • {storyData.couple.anniversary}
+          Made with love for {storyData.couple.name2} • {storyData.couple.anniversary}
         </p>
       </footer>
     </div>

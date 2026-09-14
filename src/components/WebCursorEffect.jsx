@@ -11,46 +11,44 @@ export default function WebCursorEffect() {
       setIsMobile(window.innerWidth < 768 || 'ontouchstart' in window);
     };
     checkMobile();
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener('resize', checkMobile, { passive: true });
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Canvas Web Trail & Web Shot for Desktop
+  // Canvas Web Trail & Web Shot for Desktop (High FPS Optimized)
   useEffect(() => {
     if (isMobile) return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: true });
 
     let animationFrameId;
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
+    let resizeTimeout;
     const handleResize = () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }, 100);
     };
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize, { passive: true });
 
     const points = [];
     const webShots = [];
+    let pendingMouseEvt = null;
 
     const handleMouseMove = (e) => {
-      points.push({
-        x: e.clientX,
-        y: e.clientY,
-        alpha: 1,
-        life: 0,
-      });
-      if (points.length > 15) points.shift();
+      pendingMouseEvt = e;
     };
 
     const handleClick = (e) => {
       sfx.playWebShoot();
-      // Create web shot rays radiating from click
       const numRays = 8;
-      const rayLength = 60 + Math.random() * 40;
+      const rayLength = 50 + Math.random() * 30;
       for (let i = 0; i < numRays; i++) {
         const angle = (i * (2 * Math.PI)) / numRays;
         webShots.push({
@@ -64,13 +62,23 @@ export default function WebCursorEffect() {
       }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     window.addEventListener('click', handleClick);
 
     const render = () => {
+      if (pendingMouseEvt) {
+        points.push({
+          x: pendingMouseEvt.clientX,
+          y: pendingMouseEvt.clientY,
+          life: 0,
+        });
+        if (points.length > 12) points.shift();
+        pendingMouseEvt = null;
+      }
+
       ctx.clearRect(0, 0, width, height);
 
-      // Draw Cursor Web Trail
+      // Smooth Web Trail Lines
       if (points.length > 1) {
         ctx.beginPath();
         ctx.moveTo(points[0].x, points[0].y);
@@ -82,36 +90,28 @@ export default function WebCursorEffect() {
           ctx.quadraticCurveTo(p1.x, p1.y, xc, yc);
         }
 
-        ctx.strokeStyle = 'rgba(239, 35, 60, 0.6)';
-        ctx.lineWidth = 1.5;
-        ctx.shadowColor = '#EF233C';
-        ctx.shadowBlur = 8;
+        ctx.strokeStyle = 'rgba(239, 35, 60, 0.75)';
+        ctx.lineWidth = 1.8;
         ctx.stroke();
 
-        // Draw cross web connects between trail points
+        // Cross Spider Threads
         for (let i = 0; i < points.length; i += 3) {
           if (i + 2 < points.length) {
             ctx.beginPath();
             ctx.moveTo(points[i].x, points[i].y);
             ctx.lineTo(points[i + 2].x, points[i + 2].y);
-            ctx.strokeStyle = 'rgba(248, 248, 248, 0.25)';
-            ctx.lineWidth = 0.8;
+            ctx.strokeStyle = 'rgba(248, 248, 248, 0.35)';
+            ctx.lineWidth = 1;
             ctx.stroke();
           }
         }
       }
 
-      // Update & Fade points
-      for (let i = 0; i < points.length; i++) {
-        points[i].life += 0.05;
-        points[i].alpha -= 0.04;
-      }
-
-      // Render & Update Web Shots
+      // Render Web Shots
       for (let i = webShots.length - 1; i >= 0; i--) {
         const shot = webShots[i];
-        shot.progress += 0.15;
-        shot.alpha -= 0.05;
+        shot.progress += 0.18;
+        shot.alpha -= 0.06;
 
         if (shot.alpha <= 0) {
           webShots.splice(i, 1);
@@ -125,9 +125,7 @@ export default function WebCursorEffect() {
         ctx.moveTo(shot.x, shot.y);
         ctx.lineTo(currentX, currentY);
         ctx.strokeStyle = `rgba(239, 35, 60, ${shot.alpha})`;
-        ctx.lineWidth = 2;
-        ctx.shadowColor = '#EF233C';
-        ctx.shadowBlur = 10;
+        ctx.lineWidth = 2.2;
         ctx.stroke();
       }
 
@@ -154,16 +152,16 @@ export default function WebCursorEffect() {
       x: touch.clientX,
       y: touch.clientY,
     };
-    setRipples((prev) => [...prev, newRipple]);
+    setRipples((prev) => [...prev.slice(-4), newRipple]); // keep max 4 ripples
 
     setTimeout(() => {
       setRipples((prev) => prev.filter((r) => r.id !== newRipple.id));
-    }, 800);
+    }, 600);
   };
 
   useEffect(() => {
     if (isMobile) {
-      window.addEventListener('touchstart', handleMobileTap);
+      window.addEventListener('touchstart', handleMobileTap, { passive: true });
       return () => window.removeEventListener('touchstart', handleMobileTap);
     }
   }, [isMobile]);
@@ -174,7 +172,7 @@ export default function WebCursorEffect() {
         {ripples.map((ripple) => (
           <div
             key={ripple.id}
-            className="absolute rounded-full border-2 border-[#EF233C] animate-ping"
+            className="absolute rounded-full border-2 border-[#EF233C] animate-ping transform-gpu"
             style={{
               left: ripple.x - 30,
               top: ripple.y - 30,
@@ -199,7 +197,7 @@ export default function WebCursorEffect() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-50"
+      className="fixed inset-0 pointer-events-none z-50 transform-gpu"
     />
   );
 }
