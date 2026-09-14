@@ -19,13 +19,13 @@ export default function LoveCards() {
       <div className="text-center mb-12">
         <div>
           <span className="inline-block px-4 py-1 rounded-full bg-[#EF233C]/20 border border-[#EF233C]/50 text-[#EF233C] text-sm font-semibold tracking-widest uppercase mb-3">
-            ALASAN SPESIAL
+            SPECIAL REASONS
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-comic text-[#F8F8F8] text-glow-red mb-3">
-            HAL YANG KUSUKAI DARI KAMU
+            THINGS I LOVE ABOUT YOU
           </h2>
           <p className="text-slate-300 text-sm sm:text-base md:text-xl font-light italic max-w-md mx-auto">
-            "Klik setiap kartu di bawah untuk membaca catatan kecil tentangmu."
+            "Click any comic card below to read a little note about you."
           </p>
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function LoveCards() {
 
                   <div className="mt-3 px-3 py-1 rounded-full bg-[#EF233C]/20 border border-[#EF233C]/60 text-xs font-semibold text-[#FF7AA2] flex items-center gap-1.5">
                     <RotateCw className="w-3.5 h-3.5 text-[#EF233C]" />
-                    <span>Klik untuk membaca ✦</span>
+                    <span>Click to reveal ✦</span>
                   </div>
                 </div>
               ) : (
@@ -72,7 +72,7 @@ export default function LoveCards() {
 
                   <div className="flex items-center gap-1.5 text-[#FF7AA2] text-xs font-comic mb-2">
                     <Sparkles className="w-4 h-4 text-[#FF7AA2]" />
-                    <span className="tracking-widest uppercase">Catatan Rahasia #{card.id}</span>
+                    <span className="tracking-widest uppercase">Secret Note #{card.id}</span>
                   </div>
 
                   <p className="font-handwriting text-xl sm:text-2xl md:text-3xl text-slate-100 leading-relaxed font-semibold my-2 px-2">
@@ -80,7 +80,7 @@ export default function LoveCards() {
                   </p>
 
                   <div className="mt-2 text-[11px] font-mono text-slate-400">
-                    (Klik di mana saja untuk menutup)
+                    (Click anywhere to close)
                   </div>
                 </div>
               )}

@@ -31,13 +31,13 @@ export default function PhotoWeb() {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block px-4 py-1 rounded-full bg-[#2563EB]/20 border border-[#2563EB]/50 text-[#2563EB] text-sm font-semibold tracking-widest uppercase mb-3">
-            BAB 02: GALERI FOTO
+            CHAPTER 02: GALLERY
           </span>
           <h2 className="text-4xl md:text-6xl font-comic text-[#F8F8F8] text-glow-blue mb-3">
-            GALERI KENANGAN KITA
+            OUR MEMORY GALLERY
           </h2>
           <p className="text-slate-300 text-lg md:text-xl font-light italic max-w-lg mx-auto">
-            "Kumpulan momen sederhana yang selalu membuatku tersenyum saat mengingatnya."
+            "A collection of sweet moments that always bring a smile to my face."
           </p>
         </motion.div>
       </div>
@@ -186,7 +186,7 @@ export default function PhotoWeb() {
               <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left px-2">
                 <div>
                   <span className="text-xs font-comic text-[#EF233C] tracking-widest uppercase">
-                    Kenangan {selectedIndex + 1} dari {photos.length}
+                    Memory {selectedIndex + 1} of {photos.length}
                   </span>
                   <h4 className="text-xl md:text-2xl font-handwriting text-white font-bold leading-snug">
                     "{photos[selectedIndex].caption}"
@@ -196,7 +196,7 @@ export default function PhotoWeb() {
                 <div className="flex items-center gap-2">
                   <span className="text-xs px-3 py-1.5 rounded-full bg-[#EF233C]/20 border border-[#EF233C] text-[#EF233C] flex items-center gap-1 font-comic">
                     <Sparkles className="w-3.5 h-3.5" />
-                    Terajut Selamanya
+                    Captured Forever
                   </span>
                 </div>
               </div>

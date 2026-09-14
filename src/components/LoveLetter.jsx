@@ -53,10 +53,10 @@ export default function LoveLetter() {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block px-4 py-1 rounded-full bg-[#FF7AA2]/20 border border-[#FF7AA2]/50 text-[#FF7AA2] text-sm font-semibold tracking-widest uppercase mb-3">
-            BAB 03: SURAT UNTUKMU
+            CHAPTER 03: A LETTER FOR YOU
           </span>
           <h2 className="text-4xl md:text-6xl font-comic text-[#F8F8F8] text-glow-red mb-3">
-            SURAT DARI HATI 💌
+            MESSAGE FROM THE HEART 💌
           </h2>
           <p className="text-slate-300 text-lg md:text-xl font-light italic max-w-md mx-auto">
             "{storyData.loveLetter.header}"
@@ -116,7 +116,7 @@ export default function LoveLetter() {
 
                 {/* Click Instruction Badge */}
                 <div className="z-10 mt-4 px-4 py-1 rounded-full bg-black/60 border border-white/30 text-white text-xs font-comic tracking-wider">
-                  KLIK UNTUK MEMBUKA SURAT 💌
+                  CLICK TO OPEN LETTER 💌
                 </div>
               </motion.div>
             </motion.div>
@@ -140,14 +140,14 @@ export default function LoveLetter() {
               <div className="flex items-center justify-between border-b border-slate-700/80 pb-4 mb-6">
                 <div className="flex items-center gap-2 text-[#EF233C] font-comic text-xl">
                   <Mail className="w-6 h-6" />
-                  <span>Pesan Khusus Untukmu</span>
+                  <span>A Message For You</span>
                 </div>
                 <button
                   onClick={() => setIsOpen(false)}
                   className="px-3 py-1 bg-[#1c2233] text-slate-300 hover:text-white rounded-lg text-xs flex items-center gap-1.5 border border-slate-600 transition-colors"
                 >
                   <RefreshCw className="w-3.5 h-3.5" />
-                  Tutup Surat
+                  Close Letter
                 </button>
               </div>
 
@@ -161,9 +161,9 @@ export default function LoveLetter() {
 
               {/* Letter Sign-off Footer */}
               <div className="mt-8 pt-4 border-t border-slate-700/80 flex items-center justify-between text-slate-400 text-sm">
-                <span className="italic">Dengan penuh kasih sayang,</span>
+                <span className="italic">With all my love,</span>
                 <span className="font-comic text-lg text-[#EF233C] flex items-center gap-1">
-                  <span>Spidermu</span>
+                  <span>Spidey</span>
                   <span>🕷️❤️</span>
                 </span>
               </div>
