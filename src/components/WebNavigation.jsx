@@ -18,13 +18,13 @@ export default function WebNavigation({ activeSection, onSelectNode }) {
       {/* Section Header */}
       <div className="text-center mb-6 md:mb-8">
         <span className="inline-block px-3 py-1 rounded-full bg-[#B91C2F]/30 border border-[#EF233C]/60 text-[#EF233C] text-xs sm:text-sm font-semibold tracking-widest uppercase mb-2">
-          Peta Cerita Cinta
+          Peta Kisah Kita
         </span>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-comic text-[#F8F8F8] text-glow-red">
-          JARING NAVIGASI BAPER 🕸️
+          JARING NAVIGASI 🕸️
         </h2>
         <p className="text-slate-400 text-xs sm:text-sm md:text-base mt-1">
-          Klik titik jaring mana aja buat loncat langsung ke momen tergemes kita!
+          Pilih titik mana saja untuk melihat setiap cerita kita
         </p>
       </div>
 

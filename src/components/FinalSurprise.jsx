@@ -66,7 +66,7 @@ export default function FinalSurprise({ onReplay }) {
             className="flex flex-col items-center"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-[#EF233C]/20 border border-[#EF233C]/50 text-[#EF233C] text-sm font-semibold tracking-widest uppercase mb-4">
-              BAB 04: PETA RAHASIA
+              BAB 04: PENUTUP
             </span>
 
             <h2 className="text-3xl md:text-5xl font-comic text-[#F8F8F8] text-glow-red mb-2">

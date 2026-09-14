@@ -20,13 +20,13 @@ export default function StoryTimeline() {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block px-4 py-1 rounded-full bg-[#EF233C]/20 border border-[#EF233C]/50 text-[#EF233C] text-sm font-semibold tracking-widest uppercase mb-3">
-            BAB 01: AWAL MULA
+            BAB 01: PERJALANAN KITA
           </span>
           <h2 className="text-4xl md:text-6xl font-comic text-[#F8F8F8] text-glow-red mb-3">
-            KRONOLOGI BERSAMAMU
+            BAGAIMANA KITA DIMULAI
           </h2>
           <p className="text-slate-300 text-lg md:text-xl font-light italic max-w-lg mx-auto">
-            "Niatnya cuma kenalan biasa, eh malah bikin kecanduan kangen setiap hari!"
+            "Beberapa hal terbaik dalam hidup datang tanpa pernah kita duga sebelumnya."
           </p>
         </motion.div>
       </div>

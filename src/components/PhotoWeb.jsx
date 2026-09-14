@@ -31,13 +31,13 @@ export default function PhotoWeb() {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block px-4 py-1 rounded-full bg-[#2563EB]/20 border border-[#2563EB]/50 text-[#2563EB] text-sm font-semibold tracking-widest uppercase mb-3">
-            BAB 02: ALBUM KENCAN
+            BAB 02: GALERI FOTO
           </span>
           <h2 className="text-4xl md:text-6xl font-comic text-[#F8F8F8] text-glow-blue mb-3">
-            GALERI MUKA KONYOL & KENCAN KITA
+            GALERI KENANGAN KITA
           </h2>
           <p className="text-slate-300 text-lg md:text-xl font-light italic max-w-lg mx-auto">
-            "Setiap jepretan foto ini adalah bukti betapa bahagianya aku selalu di sampingmu!"
+            "Kumpulan momen sederhana yang selalu membuatku tersenyum saat mengingatnya."
           </p>
         </motion.div>
       </div>
